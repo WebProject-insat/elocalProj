@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ ad.title }}
+{% endblock %}
+
+{% block body %}
+
+    <div class="adtitle" style="background-image: url({{ ad.coverImage }});background-size: cover;background-position:center ">
+        <div class="container py-4 my-3">
+            <h2>{{ ad.title }}</h2>
+            <p>{{ ad.introduction }}</p>
+            <p class="h2">
+                <strong> {{ ad.rooms }} rooms </strong> for <strong>{{ ad.price }}DT/Month</strong>
+            </p>
+            <a href="#" class="btn btn-secondary">Apply!</a>
+        </div>
+
+    </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mb-3">
+            {{ ad.content | raw }}
+        </div>
+        <div class="col">
+            <div class="row my-3">
+                <div class="col-4">
+                    <img src="http://placehold.it/64x64" alt="Avatar">
+                </div>
+                <div class="col">
+                    <h3>User Name</h3>
+                    <span class="badge badge-primary">3 announces</span>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deserunt dolorum ducimus iure libero, non
+                quisquam sint tempore ullam voluptatum!</p>
+            <p>Atque blanditiis libero maxime minima tempore tenetur. Autem consequatur delectus dolore eligendi, fugit
+                magni maiores officia perspiciatis, rerum vel voluptatum!</p>
+            <p>Adipisci aliquid, atque dolores dolorum eos error expedita, incidunt ipsa neque nisi non omnis qui quod
+                repellat repellendus repudiandae voluptate?</p>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
+
+
+
