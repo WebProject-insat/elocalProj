@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
@@ -40,9 +41,15 @@ class SecurityController extends AbstractController
     /**
      * @Route("/login",name="security_login");
      */
-    public function login(){
+    public function login(AuthenticationUtils $utils){
+        $error = $utils->getLastAuthenticationError() ;
+        $username = $utils->getLastUserName() ;
+
         /* Forward to a function in which we define the specefic redirected route depending on the previous paage */
-        return $this->render('security/login.html.twig');
+        return $this->render('security/login.html.twig' , [
+            'hasError' => $error !== null,
+            'username'  => $username
+        ]);
 
     }
 
