@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Ad;
 use App\Entity\Image;
+use App\Entity\Booking ;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
@@ -32,6 +33,7 @@ class AppFixtures extends Fixture
 
                 $manager->persist($image);
             }
+
 
             $manager->persist($ad);
         }
